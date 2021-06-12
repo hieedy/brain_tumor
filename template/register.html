@@ -1,0 +1,85 @@
+
+
+{% extends 'base.html' %}  
+{% block content %}
+{% load static%}
+<style>
+        input,textarea{
+            border:none;
+        }
+        
+        input:focus, textarea:focus{
+            box-shadow: none !important;
+        }
+    </style>
+
+    <body>
+    
+        
+    <div class="container-fluid" style="background-image: url({%static 'pic/regis.jpg' %}); background-size:cover;background-repeat: no-repeat;">
+    <div class="row" style='justify-content: flex-start;'>
+       
+    <div class="col-md-6  p-5" style='background: rgba(255,255,255,0.5);'><h2>Create Account</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="row">
+            <div class="col-md-6">
+                <label for="f">First Name<font color='red'>*</font></label>
+            <input type="text" required pattern="[A-Z a-z]{3,20}" autofocus autocomplete="off" title="Format:-" id="f" class="form-control" name="fn" placeholder=" Enter your Name">
+                </div>
+            <div class="col-md-6">
+                <label for="f"> Last Name<font color='red'>*</font></label>
+            <input type="text" required pattern="[A-Z a-z]{3,20}" autofocus autocomplete="off" title="Format:-" id="f" class="form-control" name="ln" placeholder=" Enter your Name"><br/>
+                </div>
+            </div>
+            
+            
+                    
+            <label for="f">Email</label>
+            <input type="email" required autofocus autocomplete="off" title="Format:-" id="f" class="form-control" name="email" placeholder=" Enter your Name"><br/>
+            
+            <div class="row">
+                <div class="col-md-6">
+            <label for="f">Contact No.<font color='red'>*</font></label>
+            <input type="text" required  autofocus autocomplete="off" title="Format:-" id="f" class="form-control" name="contact" placeholder=" Enter Mobile No." pattern=“[0-9]”><br/>
+                </div>
+            
+            
+            
+            <div class="col-md-6 ">
+                <label for="f"><b>Password</b><font color='red'>*</font></label>
+            <input type="password" required  autofocus autocomplete="off" title="Format:-" id="f" class="form-control" name="pwd" placeholder=" Enter Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+                </div>
+            </div>
+            
+           
+            <div class="col-md-6 mt-1">
+                <label for="f"><b>Confirm Password</b><font color='red'>*</font></label>
+            <input type="password" required  autofocus autocomplete="off" title="Format:-" id="f" class="form-control" name="cpwd" placeholder=" Confirm Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"><br/>
+                </div>
+            
+            
+                <label for="f"><b>Address</b><font color='red'>*</font></label>
+           <textarea class="form-control" rows=4 name="adr"></textarea>
+                
+            
+             
+            <b><center><input type="submit" class="btn btn-outline-dark btn-md mt-4" name="Send" value="Create Account"></center></b><br/><br/>
+            
+            <p><a href="{% url 'front' %}">Already Have an Account ?</a></p>
+            
+        </form>
+        {% if res == '1' %}
+            
+            <div style="color:red;" class="text-center">Email id already exists</div>
+            {% elif res == '2' %}
+            <div style="color:red;" class="text-center">New and Confirm Password didn't Matched!!</div>
+            {% endif %}
+        </div> 
+       
+      
+    </div>   
+        
+    </div>    
+        {% endblock %}

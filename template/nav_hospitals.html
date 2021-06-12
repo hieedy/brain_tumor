@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+  
+</style>
+ <div class="container-fluid banner1">
+    <div class="col-md-6 text-left">
+        <div class="col-md-12 banner1-color">
+            <h1 class="" style="font-family: Georgia, 'Times New Roman', Times, serif;"><b>Hospitals</b></h1>
+            <hr>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="container">
+    
+        {% for x in hosps %}
+       
+        <div class="row pt-5">
+
+         
+        <div class="col-md-4 mb-5 p-3">
+            <img src="{{x.profile_image.url}}" width="90%">
+        </div>
+        <div class="col-md-8  p-3">
+            <h3> {{x.name}}</h3>
+            <p class="text-muted" style="width: 40%;"><i class="icofont-hospital"></i> &nbsp;<i> {{x.address}}, {{x.city}} </i></p>
+            <div class="d-flex flex-row" style="color:skyblue ;">
+                <p><i class="icofont-ui-clock"></i> {{x.opening_hrs}}</p>&nbsp;&nbsp;&nbsp;
+                <p><i class="icofont-surgeon-alt"></i> {{x.specialization}}</p>
+            </div>
+            <p>{{x.description|truncatechars:150}}</p>
+            <a href="{% url 'hospitaldetail' id=x.id %}" class="btn btn-secondary text-light btn-sm" style="border-radius: none;">Find Out More</a>
+            <hr>
+        </div>
+    </div>
+            
+
+    
+        {% endfor %} 
+        
+   
+    </div>
+
+        <!-- <div class="col-md-3">
+
+            <div class="card" style="width: 14rem;">
+                <div class="inner">
+                    <img src="{%static " pic/card.jpg" %}" height="200px" alt="..." class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><b>
+                            <center>Dr. Kapil</center>
+                        </b></h5>
+                    <p class="card-text text-secondary text-center">Psychiatrist</p>
+                    <center><a href="#" class="btn bb1 btn-primary">Know More</a></center>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+            <div class="card" style="width: 14rem;">
+                <div class="inner">
+                    <img src="{%static " pic/ne3.jpg" %}" height="200px" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><b>
+                            <center>Dr.Neha</center>
+                        </b></h5>
+                    <p class="card-text text-secondary text-center">Neurologist</p>
+                    <center><a href="#" class="btn bb1 btn-primary">Know More</a></center>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+            <div class="card" style="width: 14rem;">
+                <div class="inner">
+                    <img src="{%static " pic/card.jpg" %}" height="200px" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><b>
+                            <center>Dr.Neha</center>
+                        </b></h5>
+                    <p class="card-text text-secondary text-center">Neurologist</p>
+                    <center><a href="#" class="btn bb1 btn-primary">Know More</a></center>
+
+                </div>
+            </div>
+
+        </div> -->
+    <!-- </div>
+
+</div> -->
+
+
+
+
+
+
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
+
+
+
+{% endblock %}

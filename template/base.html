@@ -1,0 +1,191 @@
+{% load static %}
+
+<html>
+
+<head><title>front page</title>
+    <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{%static 'css/icofont.min.css' %}" rel="stylesheet">
+<link href="{%static 'css/mystylesheet.css' %}" rel="stylesheet">
+<link href="{%static 'css/css2.css' %}" rel="stylesheet">
+<!-- <link href="static\css\mystylesheet.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+<style>
+    .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+*{font-size: 18px;}
+
+</style>
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6 mt-4">
+            
+             <!-- <p> <i class='icofont-facebook icofont-1x ms-2 text-darkgray rounded p-2'style="color: midnightblue"></i>
+                    
+                    <i class='icofont-instagram icofont-1x ms-2 text-darkgrey bg-skyblue  rounded p-2' style="color: #5DB2FF"></i>
+                    
+                    <i class='icofont-twitter icofont-1x ms-2 text-darkgray rounded p-2' style="color: #5DB2FF"></i>
+                    </p> -->
+            </div>
+        <div class="col-md-6 d-flex justify-content-end mt-4">
+            
+            <p><i class='icofont-email text-darkgray  rounded p-2' style="color: #5DB2FF"></i><span class="text-secondary">info@neurocare.com</span>
+            
+                <i class='icofont-phone text-darkgray  rounded p-2' style="color: #5DB2FF; "></i><span class="text-secondary">+1(302)6353426</span></p>
+            
+        </div>
+            
+            
+        </div>
+        </div>
+        </div> 
+       
+        
+        
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light " style="background-color: white">
+  <a class="navbar-brand ms-5" href="#"><img src="{%static 'pic/logo.png' %}" height="70px" width="200px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav me-auto ms-auto" >
+      <li class="nav-item active" style="margin-left: 10px;">
+          <a class="nav-link"  href="{% url 'front' %}"><b>Home</b> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+          <a class="nav-link" href="{% url 'disease' %}"><b>Diseases</b></a>
+      </li>
+      <li class="nav-item " style="margin-left: 10px;">
+          <a class="nav-link" href="{% url 'blog' %}"><b>Blog</b> </a>
+      </li>
+        
+      <li class="nav-item" style="margin-left: 10px;">
+          <a class="nav-link" href="{% url 'nav_hospitals' %}"><b>Hospitals</b> </a>
+      </li>
+        
+      <li class="nav-item" style="margin-left: 10px;">
+          <a class="nav-link" href="{% url 'nav_doctors' %}"><b>Doctors</b> </a>
+          </li>
+
+          <li class="nav-item" style="margin-left: 10px;">
+            <a class="nav-link" href="{% url 'nav_labs' %}"><b> Diagnostic Labs</b> </a>
+            </li>    
+          
+      <li class="nav-item" style="color:#727272; margin-left: 10px;">
+          <a class="nav-link" href="{% url 'contactus' %}"><b>Contact Us</b> </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav me-auto ms-auto  pr-5">
+       
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle btn btn-secondary text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Login
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="{% url 'login' %}">As User</a></li>
+                      <li><a class="dropdown-item" href="{% url 'doc_login' %}">As Doctor</a></li>
+                      
+                    </ul>
+                  </li>
+                  <li class="nav-item" style="color:#727272; margin-left: 10px;">
+                    <a class="nav-link" href="{% url 'register' %}"><b>Register</b> </a>
+                </li>
+                  
+    </ul>
+    
+
+  </div>
+</nav>
+
+{% block content %}
+
+
+{% endblock %}
+
+
+<div class="container-fluid bg-dark text-white p-4" >
+    
+    <div class="container">
+        
+        <div class="row" style="color: lightgray">
+            <div class="col-md-3">
+                <h2><img src="{%static 'pic/logo3.jpg' %}" height="60px" width='60px' style='margin-left: 68px'>NEUROWORLD</h2>
+                <p>brain diseases symptoms
+                    causes, therapies, drugs and medicines</p>
+            <p> <i class='icofont-facebook ms-2 text-lightgray bg-gray rounded p-2'></i>
+                    
+                    <i class='icofont-instagram ms-2 text-lightgray bg-gray  rounded p-2'></i>
+                    
+                    <i class='icofont-twitter ms-2 text-lightgray bg-gray  rounded p-2'></i>
+                    </p>
+            </div>
+            
+            <div class="col-md-3">
+                <h3><b>Departments</b></h3><br/>
+                <p>Brain tumor Detection</p>
+                <p>MRI</p>
+                <P>CONSULTATION</P>
+                <P>MEDICINE</P>
+            </div>
+        
+            <div class="col-md-3">
+                <h3><b>Useful Links</b></h3><br/>
+                <p><a href="{% url 'aboutus' %}" style='text-decoration: none; color:lightgray'>About</a></p>
+                <p><a href="{% url 'blog' %}" style='text-decoration: none; color:lightgray'>Blog</a></p>
+                <P><a href="" style='text-decoration: none; color:lightgray'>Appointment</a></P>
+                <P><a href="{% url 'contactus' %}" style='text-decoration: none; color:lightgray'>Contact</a></P>
+            </div>
+        
+            <div class="col-md-3 ">
+                <h3><b>Address</b></h3><br/>
+                <p> <i class='icofont-location-pin me-2 text-lightgray bg-gray rounded p-2'></i><span>Ranjit Avenue, main road </span></p>
+                <p><i class='icofont-phone me-2 text-lightgray bg-gray rounded p-2'></i>+91-8054068839</p>
+                <P><i class='icofont-email me-2 text-lightgray bg-gray rounded p-2'></i>neurcare@contact.com</P>
+                
+            </div>
+        
+        
+        </div>
+        </div>
+        
+    </div>
+    <script>
+        // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+    </script>
+    
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'css1/js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'css1/js/popper.js' %}"></script>
+    
+    {% block  jsscript %}
+    {% endblock %}
+
+    </body>
+</html>    

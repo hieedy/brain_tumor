@@ -1,0 +1,76 @@
+{% extends 'Doctor_panel/doc_sidebar1.html'%}
+{% load static %}
+{% block content %}
+
+<h1 class="display-6 ml-4">Conversation with Doctor</h1>
+<hr>
+<div class="container pt-5">
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="POST">
+                {% csrf_token %}
+
+                <input type="text" name='type' value="1" hidden>
+
+                <select name="status" id="" class=" btn btn-primary text-light btn-sm mb-1">
+                    {% if selected_field == 'active' %}
+                    <option value="active" selected>Active</option>
+                    {% else %}
+                    <option value="active">Active </option>
+                    {% endif %}
+
+                    {% if selected_field == 'not_active' %}
+                    <option value="not_active" selected>Not Active</option selected>
+                    {% else %}
+                    <option value="not_active">Not Active</option>
+                    {% endif %}
+                </select>
+
+                <button type="submit" class="btn btn-primary btn-sm">Apply</button>
+
+        </div>
+
+
+       
+    </div>
+    </form>
+
+</div>
+
+<div class="row">
+    <!-- <div class="col-md-1"></div> -->
+
+    <div class="col-md-12">
+
+        <table class="table table-bordered table-striped table-hover">
+            <tr class="bg-dark text-light">
+                <th>Sr.</th>
+                <th>Doctors</th>
+                <th>Message Patient</th>
+                <th>Days Left</th>
+            </tr>
+            {% for x in appointment %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ x.patient_id.Name }}</td>
+                <td class="text-center"><a href="{% url 'doc_chat_box' x.id %}" target="_blank"><i class="icofont-ui-message"></i></a>
+                </td>
+                <td> 5 Days</td>
+            </tr>
+            {% empty %}
+                <tr>
+                    <td>No Record(s) found</td>
+                </tr>
+            {% endfor %}
+
+        
+        </table>
+
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+
+</div>
+
+
+{% endblock %}

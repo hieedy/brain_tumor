@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+
+<body>
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+
+
+        }
+
+        .icons i {
+            color: skyblue;
+        }
+
+        #cover {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+    <div class="row " style="background-image:url('{%static 'pic/regis.jpg' %}'); background-size:cover">
+        <div id="cover" class="p-5">
+            <div class="container p-5">
+
+                <div class="col-md-5 bg-light p-5">
+                    <h3 class="display-6">{{doc.name}}</h3>
+                    <hr>
+                    <h4>Get Dedicated Care !</h4>
+
+                    <a href='{% url "appointment" doc.id %}' class='mt-4 btn rounded-pill  btn-lg'
+                        style="line-height: color: white; background: #5DB2FF">Book an Appointment</a>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+
+        <div class="row p-5">
+
+            <div class="col-md-4 pt-5  ">
+
+                {% if doc.profile_image %}
+                <img src="{{doc.profile_image.url}}" width="90%">
+                {% else %}
+
+                <img src="{%static 'pic/docdefault.jpg' %}" width="90%">
+                {% endif %}
+            </div>
+
+            <div class="col-md-8 pl-5 pt-5">
+                <h2 style="color:skyblue;">About Me</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 style="color:skyblue;">Qualification</h5>
+                        <p>{{doc.Qualification}}</p>
+                        <h5 style="color:skyblue;">Address</h5>
+                        <p>{{doc.city}}{{doc.state}}</p>
+
+                        <h5 style="color:skyblue;">Contact Me</h5>
+                        <p>{{doc.phone}}</p>
+
+                    </div>
+                    <div class="col-md-6">
+                        <h5 style="color:skyblue;">Experience</h5>
+                        <p>{{doc.experience_yrs}}</p>
+                        <h5 style="color:skyblue;">Email</h5>
+                        <p>{{doc.Email}}</p>
+
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container icons">
+        <div class="row text-center p-5">
+            <h2 style="color: #808080">How Can I Help You</h2>
+
+        </div>
+        <div class="row p-4 text-center">
+            <div class="col-md-3 p-5 bg-light">
+                <i class="icofont-pills icofont-4x"></i></br>
+                <p class="mt-3">Medicines and Drugs</p>
+            </div>
+
+            <div class="col-md-3 p-5 bg-light">
+                <i class="icofont-injection-syringe icofont-4x"></i></br>
+                <p class="mt-3">Vaccinations</p>
+            </div>
+
+            <div class="col-md-3 p-5">
+                <i class="icofont-patient-file icofont-4x"></i></br>
+                <p class="mt-3">OPD</p>
+            </div>
+
+            <div class="col-md-3 p-5">
+                <i class="icofont-autism icofont-4x"></i></br>
+                <p class="mt-3">Therapies</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+{% endblock %}

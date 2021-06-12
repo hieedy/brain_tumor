@@ -1,0 +1,73 @@
+{% extends 'Doctor_panel/doc_sidebar1.html' %}
+{% block content %}
+{% load static%}
+
+
+<!-- <link href="{%static 'css/mystylesheet.css' %}" rel="stylesheet">
+<link href="{%static 'css/css2.css' %}" rel="stylesheet"> -->
+
+<Div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h1 class=" mt-5 ">Result of Predictions </h1>
+        <hr>
+    <div class="row pt-4">
+        <div class="col-md-1 p-3"></div>
+        <div class="col-md-10 pr-5 pt-5">
+            <h3 class=""><left>Results-- High chances of Meningioma Tumor</left></h3><br><hr>
+          <img src="{%static 'predict.jpg' %}" width=300 height=300><br>
+            {{p}}<br>
+           <h5>Meningioma Tumor</h5>
+           <p>A meningioma is a tumor that arises from the meninges — the membranes that surround your brain and spinal cord. 
+               Although not technically a brain tumor, it is included in this category because it may compress or squeeze the adjacent brain, nerves and vessels.
+                Meningioma is the most common type of tumor that forms in the head.
+            Most meningiomas grow very slowly, often over many years without causing symptoms. 
+            But sometimes, their effects on nearby brain tissue, nerves or vessels may cause serious disability.     
+            Meningiomas occur more commonly in women and are often discovered at older ages, 
+            but may occur at any age.</p><br>
+
+            <h5>Symptoms</h5>  
+             <p>Changes in vision, such as seeing double or blurriness,
+                Headaches, especially those that are worse in the morning,
+                Hearing loss or ringing in the ears,
+                Memory loss,
+                Loss of smell,
+                Seizures,
+                Weakness in your arms or legs,
+                Language difficulty,   </p><br>
+            <h5>Risk Factors</h5>
+            <p><b>Radiation treatment.</b>
+                Radiation therapy that involves radiation to the head may increase the risk of a meningioma.
+            </p> 
+                
+                <p><b>Female hormones. </b>Meningiomas are more common in women, leading doctors to believe that female hormones may play a role. 
+                    Some studies have also suggested a link between breast cancer and meningioma risk related to the role of hormones. 
+                </p>
+            
+            
+            <h5>Treatments</h5>
+            <p>
+                The size and location of your meningioma,
+                The rate of growth or aggressiveness of the tumor,
+                Your age and overall health,
+                Your goals for treatment,</p> 
+              <br>
+              <p><b>Radiation therapy</b>
+                If your meningioma can't be completely removed surgically, your doctor may recommend radiation therapy following or instead of surgery.
+                The goal of radiation therapy is to destroy any remaining meningioma cells and reduce the chance that your meningioma may recur. 
+                Radiation therapy uses a large machine to aim high-powered energy beams at the tumor cells.</p>      
+                <p><b>Surgery</b></p>  
+                <p><b>Targeted Drug Therapy</b></p>    
+        </div>
+        <div class="col-md-1 p-3"></div>
+    </div>
+</form>
+
+</Div>
+
+<script src="{%static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{%static 'js/main.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,256 @@
+<!-- 
+<html>
+
+<head><title>front page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="icofont/icofont.min.css" rel="stylesheet">
+<link href="css/mystylesheet.css" rel="stylesheet">
+<link href="css/css2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    </head> 
+
+
+<body>
+<div class="container-fluid"> 
+    <div class="container">
+ <div class="row pt-5"> -->
+
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- <div class="container-fluid banner1">
+                        <div class="col-md-6 pt-5 text-left">
+                            <div class="col-md-12 banner1-color">
+                                <h1 class="h12"><b>Our Excellent Doctors</b></h1> 
+                                </div>
+                        </div></div>
+                    
+                    </div>
+                    <div class="container">
+                    <div class="row pt-5">    
+            <div class="col-md-3">
+                
+                <div class="card " style="width: 14rem;">
+                    <div class="inner">
+                        <img src="{%static "pic/card.jpg" %}" height="200px"  alt="..." class="alignleft size-medium wp-image-7000 card-img-top"></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><b><center>Dr.Stefen Cyrus</center></b></h5>
+                        <p class="card-text text-secondary text-center">Neurologist</p>
+                        <center><a href="#" class="btn bb1 btn-primary">Know More</a></center>
+                     </div>
+                </div>
+                
+                </div>
+                        
+                        <div class="col-md-3">
+                
+                <div class="card" style="width: 14rem;">
+                    <div class="inner">
+                        <img src="{%static "pic/card.jpg" %}" height="200px"  alt="..."class="card-img-top"></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><b><center>Dr. Kapil</center></b></h5>
+                        <p class="card-text text-secondary text-center">Psychiatrist</p>
+                        <center><a href="#" class="btn bb1 btn-primary">Know More</a></center>
+                        
+                     </div>
+                </div>
+                
+                </div>
+
+                        
+                   
+                        <div class="col-md-3">
+                
+                <div class="card" style="width: 14rem;">
+                    <div class="inner">
+                        <img src="{%static "pic/ne3.jpg" %}" height="200px"   class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><b><center>Dr.Neha</center></b></h5>
+                        <p class="card-text text-secondary text-center">Neurologist</p>
+                        <center><a href="#" class="btn bb1 btn-primary">Know More</a></center>
+                        
+                     </div>
+                </div>
+                
+                </div>      
+                       
+
+                        
+                        <div class="col-md-3">
+                
+                <div class="card" style="width: 14rem;">
+                    <div class="inner">
+                        <img src="{%static "pic/card.jpg" %}" height="200px" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><b><center>Dr.Neha</center></b></h5>
+                        <p class="card-text text-secondary text-center">Neurologist</p>
+                        <center><a href="#" class="btn bb1 btn-primary">Know More</a></center>
+                        
+                     </div>
+                </div>
+                
+                </div></div>
+
+            </div>   -->
+
+
+
+
+
+<style>
+    .icons i {
+        color: gray;
+        border: 2px solid gray;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    .icons a {
+        text-decoration: none;
+        margin-right: 8px;
+    }
+
+    .xyz .icon {
+        color: white;
+        background-color: skyblue;
+
+
+    }
+
+    .xyz .abc {
+        background-color: lightgray;
+
+    }
+
+    .xyz .abc p {
+        font-size: 15px;
+
+
+    }
+</style>
+
+<div class="container-fluid banner1 p-0 m-0">
+    <div class="col-md-6 text-left">
+        <div class="col-md-12 banner1-color">
+            <h1 class="" style="font-family: Georgia, 'Times New Roman', Times, serif;"><b>Our Chief Doctors </b></h1>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- <div class="row" style="margin-top: 150px">
+                           <div class="row-md-12 mt-5">
+                               <b><h3 style="font-family:sans-serif 'Poppins';color: black;font-weight: 500; margin-left: 30px">Our Excellent Team</h3></b>
+                           </div>
+                           </div> -->
+
+
+
+
+
+    <div class="row pt-5">
+
+        {% for doctor in doctors %}
+        <div class="col-md-2  pt-2">
+            {% if doctor.profile_image %}
+            <img src="{{ doctor.profile_image.url }}" width="80%" height="120px"
+                style="border-radius:50%; border:3px solid #009DFF;  " />
+            {% else %}
+
+            <img src="{%static 'pic/docdefault.jpg' %}" width="80%" height="120px"
+                style="border-radius:50%; border:3px solid #009DFF;  " />
+            {% endif %}
+        </div>
+
+        <div class="col-md-4 pr-3 pt-3">
+
+            <div class="row mb-3 xyz pr-4 pl-3">
+                <div class="col-md-2 icon  pl-2 pr-1 d-flex align-items-center justify-content-center">
+                    <i class="icofont-doctor"></i>
+                </div>
+                <div class="col-md-10 abc">
+                    <p class="m-0"><b>{{doctor.name}}</b></p>
+                    <small class="m-0">({{doctor.Qualification}})</small>
+
+
+                </div>
+            </div>
+
+
+            <p style="font-family: sans-serif 'Poppins';text-align: justify;  line-height:23px;color: #808080"
+                class="pr-3">
+                Saleem naijar kaasram eerie can be disbursed in the wofl like of a fox that is her thing smaoasa lase
+                lemedds laasd pamade eleifend sapien.</p>
+            <a href="{% url 'nav_doc_profile' doctor.id %}" class="btn bb1 btn-primary btn-sm mt-0" >Know
+                More</a>
+            <a href="{% url 'appointment' doctor.id %}" class="btn bb1 btn-primary btn-sm mt-0 ml-3"
+                >Book Appointment</a>
+
+            <hr>
+            <p style="font-family: sans-serif 'Poppins'; line-height: 25px" class="text-muted"><i>Neurologist</i><br>
+                Email: &nbsp;<a href="#">{{doctor.Email}}
+            </p>
+
+            <p class="icons">
+                <a href="{{doctor.twitter}}" target="_blank"><i class="icofont-twitter"></i></a>
+                <a href="#" target="_blank"><i class="icofont-facebook"></i></a>
+                <a href="#" target="_blank"><i class="icofont-google-plus"></i></a>
+
+            </p>
+
+        </div>
+
+        {% if forloop.counter|divisibleby:2 %}
+    </div>
+    <div class="row pt-5">
+        {% endif %}
+
+
+        {% endfor %}
+
+
+
+
+
+    </div>
+
+    
+
+</div>
+</div>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#testimonial-slider").owlCarousel({
+            items: 1,
+            itemsDesktop: [800, 2],
+            itemsDesktopSmall: [990, 1],
+            itemsTablet: [768, 1],
+            pagination: true,
+            navigation: false,
+            navigationText: ["", ""],
+            slideSpeed: 1000,
+            autoPlay: true
+        });
+    });
+</script>

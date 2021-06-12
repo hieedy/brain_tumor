@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+  
+</style>
+ <div class="container-fluid banner1">
+    <div class="col-md-6 text-left">
+        <div class="col-md-12 banner1-color">
+            <h1 class="" style="font-family: Georgia, 'Times New Roman', Times, serif;"><b>Diagnostic Labs</b></h1>
+            <hr>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<div class="container">
+    
+    {% for x in lab %}
+   
+    <div class="row pt-5">
+
+     
+    <div class="col-md-4 mb-5 p-3">
+        <img src="{{x.profile_image.url}}" width="90%">
+    </div>
+    <div class="col-md-8  p-3">
+        <h3> {{x.name}}</h3>
+        <p class="text-muted" style="width: 40%;"><i class="icofont-hospital"></i> &nbsp;<i> {{x.full_address}}, {{x.city}} </i></p>
+        <div class="d-flex flex-row" style="color:skyblue ;">
+            <p><i class="icofont-ui-clock"></i> {{x.start_time}} AM - {{x.closing_time}} PM</p>&nbsp;&nbsp;&nbsp;
+            <!-- <p><i class="icofont-ui-clock"></i> </p> -->
+        </div>
+        <!-- <p>{{x.description|truncatechars:150}}</p> -->
+        <a href="{% url 'labdetail' id=x.id %}" class="btn btn-secondary text-light btn-sm" style="border-radius: none;">View More</a>
+        <hr>
+    </div>
+</div>
+        
+
+
+    {% endfor %} 
+    
+
+</div>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}

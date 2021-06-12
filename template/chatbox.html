@@ -1,0 +1,325 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static%}
+
+
+
+<!-- <style>
+    .chatbox{
+        background: rgba(0, 0, 0 , 0.2);
+        border-radius: 10px;
+    }
+</style> -->
+
+
+<!-- <div class="container  ">
+    <div class="row justify-content-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 chatbox p-5">
+            <div class="row pb-5">
+                <div class="col-md-3 pb-4">
+                    <img src="{%static 'pic/ne3.jpg' %}" width="70%" height="80px" style="border-radius: 50%; border: 2px solid white;" >
+                </div>
+                <div class="col-md-9 pt-2">
+                    <span>  Chat with Dr.kapil</span>
+                    
+                </div>
+            </div>
+            
+
+            <div class="row justify-content-center">
+                <div class="col-md-2">
+                    <img src="{%static 'pic/ne3.jpg' %}" width="70%" height="70px" style="border-radius: 50%; border: 2px solid white;" >
+                </div>
+                
+                <div class="col-md-9 pt-4">
+                    <p style="background: #82ccdd; border-radius: 25px;" class="p-1">Hi how are uh ?</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div> -->
+
+
+
+<!--    <script src="https://kit.fontawesome.com/9d75fa64e8.js" crossorigin="anonymous"></script>-->
+<!--	<link rel="stylesheet" type="text/css" href="fluid.css">-->
+<!-- <link href="{%static 'css/icofont.min.css' %}" rel="stylesheet">
+<link href="{%static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+ <div class="chat-box">
+    <div class="header-box">
+        <img src="client-3.jpg"><h2>Dr. Kapil</h2>
+    </div>
+    
+     <div class="body-box">
+        <div class="user">
+         Hii
+         </div>
+         <div class="doctor">
+         I Am Fine
+         </div>
+         <div class="user">
+         hbfvsbgfdsjkfa
+         </div>
+         <div class="doctor">
+         jhegbyucegkfgkfgnkhjgfkgbfhaskjhvkafbvkagsdfkadsgflsf
+             sdfsdjfsdhfvsdjhvahckds
+         </div>
+         <div class="user">
+         sjknljdblajb
+         </div>
+         <div class="doctor">
+         ahbeffadsfkhadbabmvdkhvkjdsbfk jadsbfjsdbfjabfjbadjfbdsjbadjbjsdbf,jsdbfsdf sdf sdfs sdvhc svhc vsdhmcvas
+         </div>
+         
+         
+    </div>
+    <div class="bottom-box">
+        <form id="">
+            <input type="text" id="text" name="" placeholder="Enter your Message..." autocomplete="off">
+        </form>
+        <i class="fas fa-paper-plane icon-send"></i>
+        <i class="fas fa-paperclip icon-attach"></i>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+    <title></title>
+    <script src="https://kit.fontawesome.com/9d75fa64e8.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="fluid.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}"> -->
+    <style>
+      * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	background-color: #f4f4f4;
+	color: #000;
+	text-rendering: optimizeLegibility;
+    font-size: 16px;
+    font-family: 'Work Sans','Arial',sans-serif;
+    font-weight: 300;
+}
+.chat-box {
+	    width:450px;
+	    height:350px;
+	    position:absolute;
+	    /* top:50%; */
+	     left:40%; 
+	    /* transform: translate(0,-50%);  */
+
+
+    }
+.header-box{
+        width:100%;
+        height:50px;
+         border-radius: 3px;
+        background-color: skyblue;
+        
+        }
+
+img {
+      width:40px;
+      height:40px;
+      border-radius:50px;
+      margin-top: 5px;
+      margin-left: 10px;
+      background-color:black;
+        }        
+        .chat-box h1{
+            margin-top: -45px;
+            margin-left: 55px;
+            color:white;
+            font-size: 25px;
+        }
+        /* .chat-box h3{
+            
+            margin-left: 58px;
+            color:white;
+            font-size: 15px;
+        } */
+
+        .chat-box .body-box{
+            width:100%;
+            height:450px;
+             overflow-y: auto;
+            background-color: yellow;
+            background:linear-gradient(rgba(173,216,230,0.3),rgba(173,216,230,0.9));
+        }
+        .chat-box .bottom-box{
+            width:100%;
+            height:60px;
+            background-color: skyblue;
+            border-radius: 3px;
+        }  
+        .chat-box #text{
+            width:85%;
+            outline: none;
+            border:none;
+            padding: 10px;
+            border-radius: 50px;
+            margin-top:7px;
+            margin-left: 10px;
+
+        }  
+        .chat-box .bottom-box button{
+            background: none;
+            color: white;
+            border: none;
+        }
+
+        /* .chat-box i{
+      font-size: 200%;
+             
+        } */
+        
+        /* .chat-box .icon-send {
+      	width: 40px;
+      	height: 40px;
+        margin-left: 350px;
+        position: absolute;
+        transform: translate(10%,-85%);        
+
+      }    */
+      .chat-box #user1{
+            padding: 10px;
+            float:left;
+            margin:5px;
+            max-width:90%;
+            display: table;
+            clear:both;margin-left: 15px;
+            background-color:#edefed;
+            border-radius:10px;
+        }
+        .chat-box #user2{
+            padding: 10px;
+            float:right;
+                        max-width:70%;
+            background-color: #808088;
+            border-radius:10px;
+            margin:5px;
+            color:white;
+            margin-right: 15px;
+            display: table;
+            clear:both;
+        }
+    </style>
+    <div class="container">
+        <div class="chat-box">
+            <div class="header-box  ">
+                {% if appointment_detail.doctor_id.profile_image %}
+                    <img src="{{appointment_detail.doctor_id.profile_image.url}}">
+                 {% else %}
+                    <img src="{% static 'def.jpg' %}" >
+                 {% endif %}   
+                <h1 class=" pt-2">{{ appointment_detail.doctor_id.name }}</h1>
+                
+                <!-- <h3>Online</h3> -->
+            </div>
+            <div class="body-box">
+
+                <div id="user1">Hi</div>
+                <div id="user2">Hello</div>
+               
+            </div>
+      
+                
+            <div class="bottom-box">
+                <form id="form" class="d-flex flex-row">
+                    {% csrf_token %}
+                    <input type="text" id="text" name="msg" placeholder="Enter your Message..." autocomplete="off" required>
+                    <input type="text" value="{{appointment_detail.id}}" name='app_id' hidden>
+                    <input type="text" name='doc_email' 
+                    value='{{appointment_detail.doctor_id.Email}}' hidden>
+                    <input type="file"  style="display: none" id='message_attachment' name='attachment'>
+                    <i onclick="clickAttachment()" class="icofont-attachment icofont-3x"></i>
+
+                    <button type="submit" class="btn btn-lg"><i class="fas fa-paper-plane icon-send"></i></button>
+                
+                </form>
+                <!-- <i class="fas fa-paper-plane icon-send"></i> -->
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block jsscript %}
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+
+<script>
+     function clickAttachment() {
+        var attachment = document.getElementById('message_attachment');
+        attachment.click();
+    }
+
+
+    function get_time(input){
+        let split_time = input.split(":");
+        var temp_date = new Date();
+        temp_date.setHours(split_time[0]);
+        temp_date.setMinutes(split_time[1]);
+        console.log(temp_date.toLocaleTimeString('en-us', {hour:'numeric' , minute:'numeric'}));
+        return temp_date.toLocaleTimeString('en-us', {hour:'numeric' , minute:'numeric'});
+    }
+
+function get_date(input){
+    let d = new Date(input);
+    let c = d.toDateString();
+    c = c.split(" ");
+
+    return c[1]+" "+c[2]+", "+c[3];
+
+
+}
+
+var d = null;
+function upload(event){
+    event.preventDefault();
+
+    var data = new FormData($('#form').get(0));
+
+    $.ajax({
+    url: "{% url 'chatbox' %}",
+    type: "POST",
+    data: data,
+    cache: false,
+    processData: false,
+    contentType: false,
+    success: function(data) {
+       alert("Success");
+       console.log(data);
+        document.getElementById('form').reset();
+    }
+});
+}
+
+
+
+
+
+
+$(function() {
+    $('#form').submit(upload);
+});
+
+</script>
+
+{% endblock %}

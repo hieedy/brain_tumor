@@ -1,0 +1,74 @@
+{% extends 'Doctor_panel/doc_sidebar1.html' %}
+{% block content %}
+{% load static%}
+
+
+<!-- <link href="{%static 'css/mystylesheet.css' %}" rel="stylesheet">
+<link href="{%static 'css/css2.css' %}" rel="stylesheet"> -->
+
+<Div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h1 class=" mt-5 ">Result of Predictions </h1>
+        <hr>
+    <div class="row pt-4">
+        <div class="col-md-1 p-3"></div>
+        <div class="col-md-10 pr-5 pt-5">
+            <h3 class=""><left>Results-- High chances of Glioma Tumor</left></h3><br><hr>
+          <img src="{%static 'predict.jpg' %}" width=300 height=300><br>
+            {{p}}<br>
+           <h5>Glioma Tumor</h5>
+           <p>Glioma is a type of tumor that occurs in the brain and spinal cord. 
+               Gliomas begin in the gluey supportive cells (glial cells) that surround nerve cells and help them function.
+            Three types of glial cells can produce tumors. 
+            Gliomas are classified according to the type of glial cell involved in the tumor, as well as the tumor's genetic features, 
+            which can help predict how the tumor will behave over time and the treatments most likely to work.</p><br>
+
+            <h5>Types of Glioma include:</h5>
+            <p>Astrocytomas, including astrocytoma, anaplastic astrocytoma and glioblastoma</p>
+               <p>Ependymomas, including anaplastic ependymoma, myxopapillary ependymoma and subependymoma</p>
+               <p> Oligodendrogliomas, including oligodendroglioma, anaplastic oligodendroglioma and anaplastic oligoastrocytoma</p>
+                      <br>
+            <h5>Symptoms</h5>  
+             <p>Headache,
+                Nausea or vomiting,
+                Confusion or a decline in brain function,
+                Memory loss,
+                Personality changes or irritability,
+                Difficulty with balance,
+                Urinary incontinence,
+                Vision problems, such as blurred vision, double vision or loss of peripheral vision,
+                </p><br>
+            <h5>Risk Factors</h5>
+            <p><b>Your age.</b> Your risk of a brain tumor increases as you age. 
+                Gliomas are most common in adults between ages 45 and 65 years old. 
+                However, a brain tumor can occur at any age. 
+                Certain types of gliomas, such as ependymomas and pilocytic astrocytomas, are more common in children and young adults.</p> 
+                <p><b>Exposure to radiation</b>. People who have been exposed to a type of radiation called ionizing radiation have an increased risk of brain tumor. 
+                    Examples of ionizing radiation include radiation therapy used to treat cancer and radiation exposure caused by atomic bombs.
+                    More-common forms of radiation, such as electromagnetic fields from power lines and radiofrequency radiation from microwave ovens have not been shown to increase the risk of glioma.</p> <br>
+             
+            <h5>Treatments</h5>
+            <p><b>Surgery.</b>
+              Surgery to remove as much of the tumor as possible is usually the first step in treating most types of gliomas.
+              Surgery to remove a glioma carries risks, such as infection and bleeding. Other risks may depend on the part of your brain in which your tumor is located.</p> 
+              <br>
+              <p><b>Radiation therapy</b>
+                Radiation therapy usually follows surgery in treatment of glioma, especially high-grade gliomas. 
+                Radiation uses high-energy beams, such as X-rays or protons, to kill tumor cells. 
+                Radiation therapy for glioma comes from a machine outside your body (external beam radiation).</p>      
+                <p><b>Chemotherapy</b></p>  
+                <p><b>Targeted Drug Therapy</b></p>    
+        </div>
+        <div class="col-md-1 p-3"></div>
+    </div>
+</form>
+
+</Div>
+
+<script src="{%static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{%static 'js/main.js' %}"></script>
+{% endblock %}

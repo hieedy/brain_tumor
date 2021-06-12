@@ -1,0 +1,78 @@
+{% extends 'Doctor_panel/doc_sidebar1.html' %}
+{% block content %}
+{% load static%}
+
+
+<!-- <link href="{%static 'css/mystylesheet.css' %}" rel="stylesheet">
+<link href="{%static 'css/css2.css' %}" rel="stylesheet"> -->
+
+<Div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h1 class=" mt-5 ">Result of Predictions </h1>
+        <hr>
+    <div class="row pt-4">
+        <div class="col-md-1 p-3"></div>
+        <div class="col-md-10 pr-5 pt-5">
+            <h3 class=""><left>Results-- High chances of Pituitary Tumor</left></h3><br><hr>
+          <img src="{%static 'predict.jpg' %}" width=300 height=300>
+          <br>
+            {{p}}<br>
+           <h5>Pituitary Tumor</h5>
+           <p>Pituitary tumors are abnormal growths that develop in your pituitary gland. Some pituitary tumors result in too much of the hormones that regulate important functions of your body. 
+               Some pituitary tumors can cause your pituitary gland to produce lower levels of hormones.</p><br>
+
+            <h5>Types of Pituitary include:</h5>
+            <p>Most pituitary tumors are noncancerous (benign) growths (adenomas). 
+                Adenomas remain in your pituitary gland or surrounding tissues and don't spread to other parts of your body.
+                There are various options for treating pituitary tumors, including removing the tumor, controlling its growth and managing your hormone levels with medications. 
+                Your doctor may recommend observation — or a ''wait and see'' approach.</p>
+             <br>
+            <h5>Symptoms</h5>  
+            <p>Not all pituitary tumors cause symptoms. Sometimes they are identified incidentally on an imaging test such as an MRI or CT performed for some other reason. 
+                Pituitary tumors that make hormones (functioning) can cause a variety of signs and symptoms depending on the hormone they produce.</p>
+            <p>Headache,
+                Vision loss, particularly loss of peripheral vision,
+                Nausea and vomiting,
+                Weakness,
+                Feeling cold,
+                Less frequent or no menstrual periods,
+                Sexual dysfunction,
+                Increased amount of urine,
+                Unintended weight loss or gain,</p><br>
+            <h5>Risk Factors</h5>
+            <p>People with a family history of certain hereditary conditions, 
+                such as multiple endocrine neoplasia, type 1 (MEN 1), have an increased risk of pituitary tumors. In MEN 1, 
+                multiple tumors occur in various glands of the endocrine system. 
+                Genetic testing is available for this disorder.</p><br>
+            
+            <h5>Diagnosis</h5>
+            <p><b>Blood and urine tests, Brain imaging, Vision testing.</b></p>
+                <br>
+
+            <h5>Treatments</h5>
+            <p><b>Surgery</b>
+                Surgical removal of a pituitary tumor usually is necessary 
+                if the tumor is pressing on the optic nerves or if the tumor is overproducing certain hormones. </p>
+                <p><b>Radiation therapy</b>
+                    Radiation therapy uses high-energy sources of radiation to destroy tumors. 
+                    It can be used after surgery or alone if surgery isn't an option.</p> 
+             <p><b>Replacement of pituitary hormones</b>
+                    If a pituitary tumor or surgery to remove it decreases hormone production, 
+                    you'll likely need to take replacement hormones to maintain normal hormone levels.</p> 
+                    <p><b>Medications</b></p>      
+            </div>
+
+
+        <div class="col-md-1 p-3"></div>
+    </div>
+</form>
+
+</Div>
+
+<script src="{%static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{%static 'js/main.js' %}"></script>
+{% endblock %}

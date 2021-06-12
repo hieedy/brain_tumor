@@ -1,0 +1,39 @@
+{% extends 'base.html' %}  
+{% block content %}
+{% load static%}
+
+
+<link href="{%static 'css/mystylesheet.css' %}" rel="stylesheet">
+<link href="{%static 'css/css2.css' %}" rel="stylesheet">
+<style>
+
+</style>
+<div class="container-fluid banner1">
+    <div class="col-md-6 text-left">
+        <div class="col-md-12 banner1-color">
+            <h1 class="" style="font-family: Georgia, 'Times New Roman', Times, serif;"><b>Blogs</b></h1>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<Div class="container">
+    {% for x in blogs %}
+    <div class="row blog">
+       
+        <div class="col-md-4 p-5">
+            <img src="{{x.image.url}}" height="200px" width="80%">
+        </div>
+        <div class="col-md-8 pr-5 pt-5">
+            <h2 class="display-6">{{x.title}}</h2>
+            <p class="text-muted">{{x.message|truncatechars:200}}</p>
+            <h6 class="text-muted">Posted By: <b>{{x.authorname}}</b> </h6>
+            <a href="{% url 'fullblog' id=x.id %}" class="btn  btn-sm btn-secondary mt-3">Read More</a>
+        </div>
+    </div>
+    {% endfor %}
+    
+</Div>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}

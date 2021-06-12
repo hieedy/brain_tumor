@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}  
+{% block content %}
+{% load static %}
+
+<div class="container-fluid ">
+    <div class="row">
+    <div class="row-md-12 text-left banner-color">
+        <h1 class="h">Brain Diseases</h1>
+        <h3 class="hi">Home</h3>
+    </div>
+    </div></div>
+
+    <Div class="container">
+        {% for x in disease %}
+        <div class="row disease">
+           
+            
+            <div class="col-md-8 pr-5 pt-5">
+                <h2 class="display-6">{{x.name}}</h2>
+                <p class="text-muted">{{x.description|truncatechars:2000}}</p>
+                <!-- <h6 class="text-muted">Posted By: <b>{{x.authorname}}</b> </h6> -->
+                <h6 class="text-muted">Visit <b><h6>{{x.url}}</h6></h6></b></h6>
+                <a href="{% url 'fullblog' id=x.id %}" class="btn  btn-sm btn-secondary mt-3">Click here</a>
+            </div>
+
+            <div class="col-md-4 p-5">
+                <!-- <img src="{{x.image.url}}" height="200px" width="90%"> -->
+            </div>
+        </div>
+        {% endfor %}
+        
+    </Div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}    

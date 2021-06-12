@@ -1,0 +1,45 @@
+{% extends 'sidebar.html'%}
+{% load static %}
+{% block content %}
+
+<h1 class="display-6 ml-4">Conversation with Doctor</h1>
+<hr>
+<div class="container pt-5">
+
+   
+
+
+<div class="row">
+    <!-- <div class="col-md-1"></div> -->
+
+    <div class="col-md-12">
+
+        <table class="table table-bordered table-striped table-hover">
+            <tr class="bg-dark text-light">
+                <th>Sr.</th>
+                <th>Doctors</th>
+                <th>Message Dr.</th>
+                <th>Days Left</th>
+            </tr>
+            {% for x in appointments %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ x.doctor_id.name }}</td>
+                <td class="text-center"><a href="{% url 'chatbox' x.id %}" target="_blank"><i class="icofont-ui-message"></i></a>
+                </td>
+                <td> 5 Days</td>
+            </tr>
+
+                
+            {% endfor %}
+
+
+        </table>
+
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+
+</div>
+
+
+{% endblock %}

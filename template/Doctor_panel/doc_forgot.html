@@ -1,0 +1,59 @@
+
+
+{% extends 'base.html' %}  
+{% block content %}
+{% load static %}
+
+
+<head><title>Contact Us</title>
+<!-- <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{%static 'css/icofont.min.css' %}" rel="stylesheet">
+<link href="{%static 'css/mystylesheet.css' %}" rel="stylesheet">
+<link href="{%static 'css/css2.css' %}" rel="stylesheet"> -->
+</head>
+
+    <body>
+    <div class="container-fluid banner">
+        <div class="row">
+        <div class="row-md-12 text-left banner-color">
+            <h1 class="h">Forgot Password</h1>
+            <h3 class="hi">Home</h3>
+        </div>
+        </div></div>
+        
+    <div class="container mt-3 mb-2">
+    <div class="row">
+
+    <div class="col-md-6 mt-2"><h2>Forgot Password ? </h2><br/>
+        
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div style="color: red;"> {{res}}</div>
+                <div style="color:green;"> {{rest}}</div>
+            
+                <div class="row">
+                <div class="col-md-6">
+            <label for="e"></label>
+            <input type="email" id="e" class="form-control" name="email" placeholder="Enter Email"><br/>
+            </div>
+                <div class="col-md-6">
+            <center><input type="submit" class="btn btn-outline-dark btn-md " name="Send" value="Send OTP"></center><br/>
+                    </div>
+            </div>
+                        
+            
+           </form>
+        </div> 
+        <div class="col-md-4"></div>
+      
+    </div>   
+        
+    </div>    
+    <script src="{%static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{%static 'js/main.js' %}"></script>
+    </body>
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  
+</style>
+<div class="container-fluid banner">
+    <div class="row">
+    <div class="row-md-12 text-left banner-color">
+        <h1 class="h"><b>{{labdetails.name}}</b></h1>
+        
+    </div>
+    </div></div>
+
+
+
+    <div class="container">
+        <div class="row mt-5">
+    
+            <div class="col-9 ">
+                <div class="row  p-5 ">
+                    
+                    <div class="col-1 pt-3 text-right">
+                        <i class="icofont-address-book icofont-2x "></i>
+    
+                    </div>
+                    <div class="col-3 pt-3">
+                        <h6>Contact Number: </h6>
+                        <p>{{labdetails.contact}}</p>
+                    </div>
+    
+                    <div class="col-1 pt-3">
+                        <i class="icofont-ui-clock icofont-2x "></i>
+    
+                    </div>
+                    <div class="col-3 pt-3">
+                        <h6>Working Hours: </h6>
+                        <p >{{labdetails.start_time}} AM - {{labdetails.closing_time}} PM</p>
+                    </div>
+    
+                    <div class="col-1 pt-3 text-right">
+                        <i class="icofont-location-arrow icofont-2x "></i>
+                        <p></p>
+    
+                    </div>
+                    <div class="col-3 pt-3">
+                        <h6>Address: </h6>
+                        <P>{{labdetails.full_address}}, {{labdetails.city}}</P>
+                    </div>
+                </div>
+    
+                <div class="row ">
+                    <div class="col-12 pl-5">
+                <!-- <p class="text-justify ml-4 lead">{{hospitals.description}}</p> -->
+    
+                <iframe src='{{labdetails.location}}' height="300px" width="100%" class="ml-4 mt-5 mb-4"></iframe>
+            
+                        <!-- <img src="{%static 'images/img_snow_wide.jpg' %}" alt="snow" class="pt-5" width="100%"> -->
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-3 text-center p-2">
+                <img src="{{labdetails.profile_image.url}}"  width="100%">
+                
+            </div>
+    
+        </div>
+    </div>
+    
+    <div class="container">
+        
+    </div>
+    
+    
+    <script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    
+    {% endblock %}    

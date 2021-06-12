@@ -1,0 +1,156 @@
+
+{% extends 'sidebar.html' %}  
+{% block content %}
+{% load static%}
+<body>
+    <style>
+        #cover{
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            
+        }
+        .coll{
+            color: whitesmoke;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .appoint input{
+            background: rgba(256, 256, 256, 0.4);
+            border: none;
+            border-radius: 0%;
+            border-bottom: 2px solid midnightblue;
+        }
+        .appoint button{
+            background: orange;
+            color: whitesmoke;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .appoint .gender{
+            align-content: space-between;
+        }
+    </style>
+    
+    <div class="row " style="background-image:url('{%static 'pic/appoint.jpg' %}'); background-size:cover">
+        <div id="cover" class="p-5 ">
+        <div class="container p-5 text-center">
+
+            <div class="col-md-12 coll  p-5 text-center" style='background: rgba(0,157,255,0.2);'>
+                <h2 class="display-6" style="color: whitesmoke;">Make an Appointment</h2>
+                <hr>
+                <form method="POST" class="appoint" style="text-align: left;">
+                    {% csrf_token %}
+                    
+                    <div class="container">
+                    <div class="row ">
+                        <div class="col-md-5" >
+                           <label for="f">Patient Name<font color='red'>*</font></label>
+                        <input type="text"  required pattern="[A-Z a-z]{3,20}" autofocus autocomplete="off" title="Format:-" id="f" class="form-control mt-1 text-secondary" name="fn" value="{{user.Name}}" readonly>
+                            </div>
+                            <div class="col-md-2"></div>
+                        <div class="col-md-5">
+                            <label for="f">Select Date</Select><font color='red'>*</font></label>
+                        <input type="date" required autofocus autocomplete="off" title="Format:-" id="date_appointment" class="form-control mt-1 text-secondary" name="date"  placeholder=" Select Date"><br/>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label for="f">Phone Number.<font color='red'>*</font></label>
+                                <input type="text" required  autofocus autocomplete="off" title="Format:-" id="f" class="form-control mt-1" name="contact" value="{{user.contact}}" readonly><br/>
+                                    </div>
+                            
+                            <div class="col-md-2 text-left" ></div> 
+
+                            <div class="col-md-5">
+                                <label for="f">Time<font color='red'>*</font></label>
+                                <input type="time" required pattern="[A-Z a-z]{3,20}" autofocus autocomplete="off" title="Format:-" id="f" class="form-control mt-1 text-secondary" name="time" placeholder=" Time"><br/>
+                           </div>
+                            </div>
+                            
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label for="f">Description<font color='red'>*</font></label>
+                                <input type="text-area"  required  autofocus autocomplete="off" title="Format:-" id="f" class="form-control mt-1 text-secondary" name="des" placeholder="Description"><br/>
+                           </div>
+                        
+                            <div class="col-md-2"></div>
+                        
+                        <div class="col-md-5 ">
+                            <label for="f">Gender<font color='red'>*</font></label>
+                            
+                            <div class="gender mt-2">
+                                {% if user.gender == 'male' %}
+                            <input type="radio" name="gender" checked > Male &nbsp;&nbsp;
+                            <input type="radio" name="gender" disabled> Female &nbsp;&nbsp;
+                            <input type="radio" name="gender" disabled> Others 
+                            
+                            {% elif user.gender == 'female' %}
+                            <input type="radio" name="gender" value="m" disabled> Male &nbsp;&nbsp;
+                            <input type="radio" name="gender" checked value="f" Female &nbsp;&nbsp;
+                            <input type="radio" name="gender" value="t" disabled> Others 
+                            {% elif user.gender == 'Other' %}
+
+                            <input type="radio" name="gender" value="m" disabled> Male &nbsp;&nbsp;
+                            <input type="radio" name="gender" value="f" disabled> Female &nbsp;&nbsp;
+                            <input type="radio" name="gender" checked value="t" > Others 
+                            {% endif %}
+                            </div>
+                           
+                        </div>
+                        {% if res %}
+                        <div class='row'>
+                               {{res}} 
+                        </div>
+                        {% endif %}
+                        </div>
+                        
+                       <!-- <div class="row">
+                            <div class="col-md-5">
+                                 <label for="f">Description<font color='red'>*</font></label>
+                                 <input type="text-area"  required pattern="[A-Z a-z]{3,20}" autofocus autocomplete="off" title="Format:-" id="f" class="form-control mt-1 text-secondary" name="ln" placeholder="Symptoms"><br/>
+                            </div>
+
+                            <div class="col-md-2"></div>
+                            
+                            
+
+                        </div> -->
+                        
+                                                
+                        <b><center><button type="submit" class='mt-4 btn ' name="Send">Book Appointment</button></center></b>
+                    
+                </div>
+                </form>
+
+            </div>
+        </div>
+        </div>
+        
+
+    </div> 
+
+</body>
+{% endblock %}
+
+{% block jsscript %}
+<script>
+    
+    var today = new Date();
+    var dd = today.getDate()+1;
+    var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+    var yyyy = today.getFullYear();
+    if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+    
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("date_appointment").setAttribute("min", today);
+  </script>
+{% endblock %}
+
+              

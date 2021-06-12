@@ -1,0 +1,48 @@
+
+
+{% extends 'base.html' %}  
+{% block content %}
+{% load static%}
+
+    <body>
+    <div class="container-fluid banner">
+        <div class="row">
+        <div class="col-md-12 text-left banner-color">
+            <h1 class="" style="font-size: 200px !important"><b>Login</b></h1>
+            <h3 class="hi"><b>Home | Login</b></h3>
+        </div>
+        </div></div>
+        
+    <div class="container mt-3 mb-2">
+    <div class="row">
+        
+    <div class="col-md-4 mt-2"><h2>Login </h2>
+        <form method="POST">
+            {% csrf_token %}
+
+          
+            
+            <label for="e">Email</label>
+            <input type="text" id="e" class="form-control" name="email" required ><br/>
+            
+            <label for="f">Password</label>
+            <input type="password" id="l" class="form-control" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"><br/>
+             <p><a href="{% url 'forgot' %}">Forgot Password?</a></p>
+            <input type="submit" class="btn btn-outline-dark btn-md" name="Send" value="Login"><br/><br/>
+            <p><a href="{% url 'register' %}">Don't Have an Account ?</a></p>
+        </form>
+        {% if error == '1' %}
+            <!-- <div style="color:red;" class="text-center">Invalid Credentials</div> -->
+            <script>
+                alert('Invalid')
+            </script>
+            {% endif %}
+        </div> 
+        <div class="col-md-8"></div>
+      
+    </div>   
+        
+    </div>    
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    </body>
+{% endblock %}
